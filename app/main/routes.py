@@ -81,7 +81,7 @@ def get_data():
 	if plot is not None:
 		plot_data = data.model_data.loc[data.model_data['area_name'] == plot_area]
 		plot_data = plot_data.loc[:, data.model_vars]
-		plot = plots.create_hbar(plot_area, plot_data)
+		plot = plots.create_custom_visualisation(plot_area, plot_data)
 		return jsonify(prediction=pred_area, prediction_proba=proba, 
 				area_changed_proba=new_proba_prev_area, plotData=plot)
 	else:
